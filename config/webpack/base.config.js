@@ -12,10 +12,7 @@ const PostCssFixFlexbugs = require('postcss-flexbugs-fixes')
 const PostCssNormalize = require('postcss-normalize')
 
 const alias = require('./alias')
-const {
-    APP_OUTPUT_DIR,
-    ENTRY: entry
-} = require('../constants')
+const { APP_OUTPUT_DIR, ENTRY: entry } = require('../constants')
 
 module.exports = {
     entry,
@@ -25,12 +22,12 @@ module.exports = {
     },
     resolve: {
         alias,
-        extensions: [".js", ".jsx"],
+        extensions: ['.js', '.jsx'],
         modules: ['src', 'node_modules']
     },
     optimization: {
         runtimeChunk: {
-            name: 'manifest',
+            name: 'manifest'
         },
         splitChunks: {
             automaticNameDelimiter: '-',
@@ -39,18 +36,15 @@ module.exports = {
                 commons: {
                     name: 'commons',
                     chunks: 'initial',
-                    minChunks: 2,
+                    minChunks: 2
                 },
                 vendors: {
                     test: /[\\/]node_modules[\\/]/,
                     priority: -10,
-                    name: module => module
-                        .context
-                        .match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1]
-                        .replace('@', ''),
-                },
-            },
-        },
+                    name: (module) => module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1].replace('@', '')
+                }
+            }
+        }
     },
     module: {
         rules: [
@@ -61,15 +55,12 @@ module.exports = {
             {
                 test: /\.js(x?)$/,
                 exclude: /node_modules/,
-                use: [
-                    'react-hot-loader/webpack',
-                    'babel-loader'
-                ],
+                use: ['react-hot-loader/webpack', 'babel-loader']
             },
             {
                 test: /\.(s)?css$/,
                 use: [
-                    "style-loader",
+                    'style-loader',
                     {
                         loader: 'css-loader',
                         options: {
@@ -78,7 +69,7 @@ module.exports = {
                             modules: true,
                             sourceMap: true,
                             importLoaders: 1,
-                            localsConvention: "camelCaseOnly",
+                            localsConvention: 'camelCaseOnly',
                             onlyLocals: false
                         }
                     },
@@ -104,7 +95,7 @@ module.exports = {
                             sourceMap: true
                         }
                     }
-                ],
+                ]
             },
             {
                 test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
@@ -117,12 +108,20 @@ module.exports = {
                         }
                     }
                 ]
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                use: [
+                    {
+                        loader: 'file-loader'
+                    }
+                ]
             }
         ]
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: "./src/index.html"
+            template: './src/index.html'
         })
     ]
-};
+}
