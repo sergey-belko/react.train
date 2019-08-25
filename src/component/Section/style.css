@@ -1,0 +1,18 @@
+.container {
+    border: yellow solid;
+    margin: 1% 0;
+    background: black;
+    border-radius: 4px;
+    padding: 1%;
+    color: white;
+}
+
+.title {
+    color: yellow;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+.content {
+    color: white;
+}
