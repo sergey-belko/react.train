@@ -1,0 +1,39 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background: yellow;
+  border-radius: 4px;
+}
+
+.header__navigation {
+  flex: 1 1 auto;
+}
+
+.header__logo {
+  flex: 0.5 1 auto;
+}
+
+.header__logo_icon {
+  height: 100px;
+}
+
+.header__list {
+  display: flex;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  justify-content: space-evenly;
+  list-style-type: none;
+}
+
+.header__list_element {
+  flex: 1 1 auto;
+  position: relative;
+}
+
+.header__list_element a {
+  position: absolute;
+  color: black;
+  top: 50%;
+}
