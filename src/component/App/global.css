@@ -1,6 +1,11 @@
 @import-normalize;
 
+:root {
+    font-size: 2vw;
+    font-family: ChunkFiveWeb, Georgia, serif;
+}
+
 body {
-  padding: 5% 10%;
-  background: url("../../assets/img/background.jpg") repeat;
+    padding: 5% 10%;
+    background: url('../../assets/img/background.jpg') repeat;
 }
