@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import { InfoPage, MainPage } from '@component/Page'
+import { InfoPage, MainPage, FormPage } from '@component/Page'
 import Head from '@component/Head'
 import RouterHeader from '@component/RouterHeader'
 
@@ -16,6 +16,11 @@ const elements = [
         path: '/info',
         component: InfoPage,
         title: 'Info'
+    },
+    {
+        path: '/form',
+        component: FormPage,
+        title: 'Form'
     },
     {
         path: '/:id',
