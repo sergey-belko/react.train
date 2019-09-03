@@ -8,8 +8,8 @@ app.get('/', function(req, res) {
 })
 
 app.post('/', function(req, res) {
-    console.log(req.body)
-    res.send('Hello World from post route!', JSON.stringify(req.body))
+    console.log(req)
+    res.status(200).send('Hello World from post route!', JSON.stringify(req.body))
 })
 
 app.listen(port, function() {
