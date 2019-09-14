@@ -1,10 +1,19 @@
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import { InfoPage, MainPage, FormPage } from '@component/Page'
+import { InfoPage, MainPage, FormPage, MobxPage } from '@component/Page'
 import Head from '@component/Head'
 import RouterHeader from '@component/RouterHeader'
 
 import './global.css'
+
+import { observable, action } from 'mobx'
+
+const appStore = observable({
+    name: 'John',
+    updateName: action('Update name', () => {
+        appStore.name = appStore.name + 1
+    })
+})
 
 const elements = [
     {
@@ -24,8 +33,13 @@ const elements = [
     },
     {
         path: '/:id',
-        component: InfoPage,
+        component: (props) => <InfoPage store={appStore} {...props} />,
         title: 'Info ID'
+    },
+    {
+        path: '/mobx',
+        component: (props) => <MobxPage store={appStore} {...props} />,
+        title: 'Mobx'
     }
 ]
 
