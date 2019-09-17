@@ -1,7 +1,7 @@
 import React from 'react'
 import style from './style.css'
 
-const Header = ({ elements = [] }) => (
+export const Header = ({ elements = [] }) => (
     <navigation className={style.container}>
         <ul className={style.navigation}>
             {elements.map(({ title, anchor }) => (

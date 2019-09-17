@@ -3,7 +3,7 @@ import Section from '@component/Section'
 import { AllPineapples } from '@img/pineapple'
 import style from './style.css'
 
-class Gallery extends React.Component {
+export class Gallery extends React.Component {
     constructor(props) {
         super(props)
         this.state = { img: AllPineapples[2] }

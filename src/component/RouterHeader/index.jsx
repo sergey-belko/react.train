@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import Logo from '@img/logo.svg'
 import style from './style.css'
 
-const Header = ({ elements = [] }) => (
+export const RouterHeader = ({ elements = [] }) => (
     <header className={style.container}>
         <Logo className={style.logo} />
         <ul className={style.navigation}>
@@ -19,4 +19,4 @@ const Header = ({ elements = [] }) => (
     </header>
 )
 
-export default Header
+export default RouterHeader

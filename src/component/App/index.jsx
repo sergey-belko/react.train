@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import { InfoPage, MainPage, FormPage, MobxPage } from '@component/Page'
+import { InfoPage, MainPage, FormPage, MobxPage, FlexboxPage } from '@component/Page'
 import Head from '@component/Head'
 import RouterHeader from '@component/RouterHeader'
 
@@ -32,7 +32,7 @@ const elements = [
         title: 'Form'
     },
     {
-        path: '/:id',
+        path: '/info/:id',
         component: (props) => <InfoPage store={appStore} {...props} />,
         title: 'Info ID'
     },
@@ -40,10 +40,15 @@ const elements = [
         path: '/mobx',
         component: (props) => <MobxPage store={appStore} {...props} />,
         title: 'Mobx'
+    },
+    {
+        path: '/flexbox',
+        component: FlexboxPage,
+        title: 'Flexbox'
     }
 ]
 
-const App = () => (
+export const App = () => (
     <React.Fragment>
         <Head />
         <Router>

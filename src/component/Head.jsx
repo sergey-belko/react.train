@@ -1,7 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
-const Head = () => (
+export const Head = () => (
     <Helmet>
         <meta charset="utf-8" />
         <link rel="apple-touch-icon" sizes="57x57" href="./assets/favicons/apple-icon-57x57.png" />

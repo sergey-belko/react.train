@@ -2,7 +2,7 @@ import React from 'react'
 import Section from '@component/Section'
 import style from './style.css'
 
-const Footer = () => (
+export const Footer = () => (
     <footer className={style.footer}>
         <Section title="Contact us" className={style.section}>
             <a name="contact"></a>
