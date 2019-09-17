@@ -6,7 +6,7 @@ export const Header = ({ elements = [] }) => (
         <ul className={style.navigation}>
             {elements.map(({ title, anchor }) => (
                 <li key={anchor}>
-                    <a className={style.link} href={anchor}>
+                    <a className={style.link} href={'#' + anchor}>
                         {title}
                     </a>
                 </li>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Section, FlexContainer, Main } from '@component'
+import { Header, Section, FlexContainer, Main, ReturnBtn } from '@component'
 import style from './style.css'
 
 const Elements = ({ className }) => (
@@ -21,12 +21,17 @@ const FlexSection = ({ children, title }) => (
 const content = ''
 
 const sections = [
-    { anchor: 'main', title: 'Main', content },
-    { anchor: 'project', title: 'Project', content },
-    { anchor: 'about', title: 'About', content },
-    { anchor: 'gallery', title: 'Gallery', component: FlexSection, content }
-]
+    { title: 'Main' },
+    { title: 'Project' },
+    { title: 'About' },
+    { title: 'Gallery', component: FlexSection }
+].map((item) => ({ ...item, content, anchor: item.title.toLowerCase() }))
 
-export const FlexboxPage = () => <Main title="Flexbox Page" sections={sections} />
-
+export const FlexboxPage = () => (
+    <>
+        <Header elements={sections} />
+        <Main title="Flexbox" sections={sections} />
+        <ReturnBtn />
+    </>
+)
 export default FlexboxPage

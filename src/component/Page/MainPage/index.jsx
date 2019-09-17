@@ -8,20 +8,15 @@ fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in c
 deserunt mollit anim id est laborum.`
 
 const sections = [
-    { anchor: 'main', title: 'Main', content },
-    { anchor: 'project', title: 'Project', content },
-    { anchor: 'about', title: 'About', content },
-    { anchor: 'gallery', title: 'Gallery', component: Gallery, content }
-]
-
-const elements = sections.map(({ anchor, title }) => ({
-    anchor: '#' + anchor,
-    title
-}))
+    { title: 'Main' },
+    { title: 'Project' },
+    { title: 'About' },
+    { title: 'Gallery', component: Gallery }
+].map((item) => ({ ...item, content, anchor: item.title.toLowerCase() }))
 
 export const MainPage = () => (
     <React.Fragment>
-        <Header elements={elements} />
+        <Header elements={sections} />
         <Main title="Pineapples!" sections={sections} />
         <Footer />
         <ReturnBtn />
