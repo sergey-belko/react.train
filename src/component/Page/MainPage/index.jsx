@@ -1,11 +1,5 @@
 import React from 'react'
-import Footer from '@component/Footer'
-import Header from '@component/Header'
-import Main from '@component/Main'
-import Gallery from '@component/Gallery'
-import Section from '@component/Section'
-
-import style from './style.css'
+import { Header, Footer, Main, Gallery, ReturnBtn } from '@component'
 
 const content = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
 dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
@@ -28,7 +22,7 @@ const elements = sections.map(({ anchor, title }) => ({
 export const MainPage = () => (
     <React.Fragment>
         <Header elements={elements} />
-        <Main sections={sections} />
+        <Main title="Pineapples!" sections={sections} />
         <Footer />
         <ReturnBtn />
     </React.Fragment>
