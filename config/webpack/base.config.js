@@ -66,7 +66,9 @@ module.exports = {
                         options: {
                             url: true,
                             import: true,
-                            modules: true,
+                            modules: {
+                                localIdentName: '[path][name]__[local]--[hash:base64:5]'
+                            },
                             sourceMap: true,
                             importLoaders: 1,
                             localsConvention: 'camelCaseOnly',
