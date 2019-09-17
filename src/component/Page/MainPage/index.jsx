@@ -25,18 +25,12 @@ const elements = sections.map(({ anchor, title }) => ({
     title
 }))
 
-const ReturnButton = () => (
-    <a href="#top" className={style.returnBtn}>
-        <Section title="Go to top" />
-    </a>
-)
-
 export const MainPage = () => (
     <React.Fragment>
         <Header elements={elements} />
         <Main sections={sections} />
         <Footer />
-        <ReturnButton />
+        <ReturnBtn />
     </React.Fragment>
 )
 

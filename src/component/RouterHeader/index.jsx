@@ -6,6 +6,7 @@ import style from './style.css'
 
 export const RouterHeader = ({ elements = [] }) => (
     <header className={style.container}>
+        <a name="top"></a>
         <Logo className={style.logo} />
         <ul className={style.navigation}>
             {elements.map(({ title, path }) => (
