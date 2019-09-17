@@ -2,7 +2,7 @@ import React from 'react'
 import style from './style.css'
 
 export const Header = ({ elements = [] }) => (
-    <navigation className={style.container}>
+    <nav className={style.container}>
         <ul className={style.navigation}>
             {elements.map(({ title, anchor }) => (
                 <li key={anchor}>
@@ -12,7 +12,7 @@ export const Header = ({ elements = [] }) => (
                 </li>
             ))}
         </ul>
-    </navigation>
+    </nav>
 )
 
 export default Header
