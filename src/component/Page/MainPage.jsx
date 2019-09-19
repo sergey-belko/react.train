@@ -12,15 +12,15 @@ const sections = [
     { title: 'Project' },
     { title: 'About' },
     { title: 'Gallery', component: Gallery }
-].map((item) => ({ ...item, content, anchor: item.title.toLowerCase() }))
+].map((item) => ({ ...item, content, anchor: item.title.toLowerCase().replace(' ', '') }))
 
 export const MainPage = () => (
-    <React.Fragment>
+    <>
         <Header elements={sections} />
         <Main title="Pineapples!" sections={sections} />
         <Footer />
         <ReturnBtn />
-    </React.Fragment>
+    </>
 )
 
 export default MainPage

@@ -1,21 +1,17 @@
 import React from 'react'
-import Section from '@component/Section'
+import { Section } from '@component'
 import style from './style.css'
 
-export const Main = ({ sections = [], title }) => {
-    console.log({ sections })
-    return (
-        <main>
-            {title && <h1 className={style.title}>{title}</h1>}
-            {sections.map(({ component: Component, ...rest }, index) => {
-                return Component ? (
-                    <Component {...rest} key={`${index + rest.title}`} />
-                ) : (
-                        <Section {...rest} key={`${index + rest.title}`} />
-                    )
+export const Main = ({ sections = [], title }) => (
+    <main>
+        {title && <h1 className={style.title}>{title}</h1>}
+        {sections
+            .map((item, index) => ({ ...item, key: index + item.title }))
+            .map(({ component: Component, ...rest }) => {
+                console.log({ rest, Component })
+                return Component ? <Component {...rest} /> : <Section {...rest} />
             })}
-        </main>
-    )
-}
+    </main>
+)
 
 export default Main
