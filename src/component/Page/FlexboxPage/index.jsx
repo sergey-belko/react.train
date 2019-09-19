@@ -1,31 +1,39 @@
 import React from 'react'
-import { Header, Section, FlexContainer, Main, ReturnBtn } from '@component'
-import style from './style.css'
-
-const Elements = ({ className }) => (
-    <div className={className}>
-        {[...new Array(4).keys()].map((item, index) => (
-            <div className={style.element} key={index}>
-                {item}
-            </div>
-        ))}
-    </div>
-)
-
-const FlexSection = ({ children, title }) => (
-    <Section title={title}>
-        <FlexContainer>{children}</FlexContainer>
-        <Elements />
-    </Section>
-)
-const content = ''
+import { Header, FlexSection, Main, ReturnBtn } from '@component'
 
 const sections = [
-    { title: 'Main' },
-    { title: 'Project' },
-    { title: 'About' },
-    { title: 'Gallery', component: FlexSection }
-].map((item) => ({ ...item, content, anchor: item.title.toLowerCase() }))
+    {
+        title: 'Flex flow',
+        component: FlexSection,
+        examples: [
+            {
+                summary: 'Row/Column',
+                options: [
+                    {
+                        value: 'flexflow__row',
+                        title: 'row',
+                        checked: true
+                    },
+                    {
+                        value: 'flexflow__row_reverse',
+                        title: 'row reverse'
+                    },
+                    {
+                        value: 'flexflow__column',
+                        title: 'column'
+                    },
+                    {
+                        value: 'flexflow__column_reverse',
+                        title: 'column reverse'
+                    }
+                ]
+            }
+        ]
+    }
+].map((item) => ({
+    ...item,
+    anchor: item.title.toLowerCase().replace(' ', '')
+}))
 
 export const FlexboxPage = () => (
     <>
@@ -34,4 +42,5 @@ export const FlexboxPage = () => (
         <ReturnBtn />
     </>
 )
+
 export default FlexboxPage
