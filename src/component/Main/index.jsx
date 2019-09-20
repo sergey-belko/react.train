@@ -7,10 +7,10 @@ export const Main = ({ sections = [], title }) => (
         {title && <h1 className={style.title}>{title}</h1>}
         {sections
             .map((item, index) => ({ ...item, key: index + item.title }))
-            .map(({ component: Component, ...rest }) => {
-                console.log({ rest, Component })
-                return Component ? <Component {...rest} /> : <Section {...rest} />
-            })}
+            .map(({ component: Component, ...rest }) => Component
+                ? <Component {...rest} />
+                : <Section {...rest} />
+            )}
     </main>
 )
 

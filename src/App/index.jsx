@@ -1,8 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import { InfoPage, MainPage, FormPage, MobxPage, FlexboxPage } from '@component/Page'
-import Head from '@component/Head'
-import RouterHeader from '@component/RouterHeader'
+import { InfoPage, MainPage, FormPage, MobxPage, FlexboxPage } from '@page'
+import { Head, RouterHeader } from '@component'
 
 import './global.css'
 
@@ -49,7 +48,7 @@ const elements = [
 ]
 
 export const App = () => (
-    <React.Fragment>
+    <>
         <Head />
         <Router>
             <RouterHeader elements={elements} />
@@ -57,7 +56,7 @@ export const App = () => (
                 <Route key={index} exact {...route} />
             ))}
         </Router>
-    </React.Fragment>
+    </>
 )
 
 export default App

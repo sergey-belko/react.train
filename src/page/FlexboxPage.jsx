@@ -1,5 +1,6 @@
 import React from 'react'
-import { Header, FlexSection, Main, ReturnBtn } from '@component'
+import { Header, Main, ReturnBtn } from '@component'
+import FlexSection from '@component/FlexSection'
 
 const sections = [
     {
@@ -30,10 +31,7 @@ const sections = [
             }
         ]
     }
-].map((item) => ({
-    ...item,
-    anchor: item.title.toLowerCase().replace(' ', '')
-}))
+].map((item) => ({ ...item, anchor: item.title.toLowerCase().replace(' ', '') }))
 
 export const FlexboxPage = () => (
     <>

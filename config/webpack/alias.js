@@ -28,7 +28,10 @@ function resolveTsconfigPathsToAlias(settings = {}) {
 
 const alias = {
     '@img': resolve(APP_DIR, 'src', 'assets', 'img'),
-    '@component': resolve(APP_DIR, 'src', 'component')
+    '@component': resolve(APP_DIR, 'src', 'component'),
+    '@app': resolve(APP_DIR, 'src', 'App'),
+    '@page': resolve(APP_DIR, 'src', 'page'),
+    '@util': resolve(APP_DIR, 'src', 'util')
 }
 
 module.exports = {
