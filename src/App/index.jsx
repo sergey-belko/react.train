@@ -3,17 +3,9 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { InfoPage, MainPage, FormPage, MobxPage, FlexboxPage } from '@page'
 import { Head, RouterHeader } from '@component'
 import { StoreProvider } from "@store"
+import { useStore } from '@store'
 
 import './global.css'
-
-import { observable, action } from 'mobx'
-
-const appStore = observable({
-    name: 'John',
-    updateName: action('Update name', () => {
-        appStore.name = appStore.name + 1
-    })
-})
 
 const elements = [
     {
@@ -33,12 +25,12 @@ const elements = [
     },
     {
         path: '/info/:id',
-        component: (props) => <InfoPage store={appStore} {...props} />,
+        component: (props) => <InfoPage store={useStore('User')} {...props} />,
         title: 'Info ID'
     },
     {
         path: '/mobx',
-        component: (props) => <MobxPage store={appStore} {...props} />,
+        component: (props) => <MobxPage store={useStore('User')} {...props} />,
         title: 'Mobx'
     },
     {

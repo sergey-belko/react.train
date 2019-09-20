@@ -1,8 +1,15 @@
-export const userInitialState = {
-  user: { loggedIn: false }
+export const state = {
+  user: {
+    name: 'Fedor'
+  }
 }
 
-export const userActions = {
-  deleteRule: (state) => ({ user: { loggedIn: true } }),
-  logout: (state) => ({ user: { loggedIn: false } })
+export const action = {
+  updateName: (state) => ({
+    ...state,
+    user: {
+      ...state.user,
+      name: name + 1
+    }
+  })
 }
