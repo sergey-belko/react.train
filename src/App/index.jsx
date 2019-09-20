@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { InfoPage, MainPage, FormPage, MobxPage, FlexboxPage } from '@page'
 import { Head, RouterHeader } from '@component'
+import { StoreProvider } from "@store"
 
 import './global.css'
 
@@ -48,7 +49,7 @@ const elements = [
 ]
 
 export const App = () => (
-    <>
+    <StoreProvider>
         <Head />
         <Router>
             <RouterHeader elements={elements} />
@@ -56,7 +57,7 @@ export const App = () => (
                 <Route key={index} exact {...route} />
             ))}
         </Router>
-    </>
+    </StoreProvider>
 )
 
 export default App

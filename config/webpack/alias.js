@@ -8,6 +8,7 @@ const alias = {
   '@component': resolve(APP_DIR, 'src', 'component'),
   '@app': resolve(APP_DIR, 'src', 'App'),
   '@page': resolve(APP_DIR, 'src', 'page'),
+  '@store': resolve(APP_DIR, 'src', 'store'),
   '@util': resolve(APP_DIR, 'src', 'util')
 }
 
