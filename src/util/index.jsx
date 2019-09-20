@@ -1,5 +1,6 @@
 import React from 'react'
 
+export const addAnchor = (content) => (item) => ({ ...item, content, anchor: item.title.toLowerCase().replace(' ', '') })
 export const addKeyToItem = (item, key) => ({ ...item, key })
 
 const standartFilter = (item) => item && Object.keys(item).length !== 0

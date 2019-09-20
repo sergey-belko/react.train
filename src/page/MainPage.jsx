@@ -1,5 +1,6 @@
 import React from 'react'
 import { Header, Footer, Main, Gallery, ReturnBtn } from '@component'
+import { addAnchor } from '@util'
 
 const content = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
 dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
@@ -12,7 +13,7 @@ const sections = [
     { title: 'Project' },
     { title: 'About' },
     { title: 'Gallery', component: Gallery }
-].map((item) => ({ ...item, content, anchor: item.title.toLowerCase().replace(' ', '') }))
+].map(addAnchor(content))
 
 export const MainPage = () => (
     <>
