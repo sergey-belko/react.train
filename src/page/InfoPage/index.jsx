@@ -1,8 +1,9 @@
+import { Section } from '@component'
+import { inject } from "@store"
 import React from 'react'
-import Section from '@component/Section'
 import style from './style.css'
 
-export const InfoPage = ({ match, store }) => {
+export const InfoPage = inject('User')(({ match, ...props }) => {
     let target
 
     if (!match.params.id || match.params.id === ':id') {
@@ -14,11 +15,11 @@ export const InfoPage = ({ match, store }) => {
     return (
         <Section className={style.container}>
             <h1>
-                Hello, {target} and {store.name}!
+                Hello, {target} and {props.User.name}!
             </h1>
             <p>Hello to everyone!</p>
         </Section>
     )
-}
+})
 
 export default InfoPage

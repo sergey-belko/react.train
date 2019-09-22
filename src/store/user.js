@@ -1,15 +1,11 @@
-export const state = {
-  user: {
-    name: 'Fedor'
+import { decorate, observable } from 'mobx'
+class User {
+  name = 'Fedor'
+  updateName = () => {
+    this.name = this.name + 1
   }
 }
 
-export const action = {
-  updateName: (state) => ({
-    ...state,
-    user: {
-      ...state.user,
-      name: name + 1
-    }
-  })
-}
+decorate(User, { name: observable })
+
+export default new User()

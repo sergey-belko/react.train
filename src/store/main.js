@@ -1,3 +1,4 @@
+import { decorate, observable } from 'mobx'
 import { Gallery } from '@component'
 import { addAnchor } from '@util'
 
@@ -7,12 +8,15 @@ ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate vel
 fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
 deserunt mollit anim id est laborum.`
 
-const sections = [
-    { title: 'Main' },
-    { title: 'Project' },
-    { title: 'About' },
-    { title: 'Gallery', component: Gallery }
-].map(addAnchor(content))
+class Main {
+    sections = [
+        { title: 'Main' },
+        { title: 'Project' },
+        { title: 'About' },
+        { title: 'Gallery', component: Gallery }
+    ].map(addAnchor(content))
+}
 
-export const state = { main: { sections } }
-export const action = {}
+decorate(Main, { sections: observable })
+
+export default new Main()

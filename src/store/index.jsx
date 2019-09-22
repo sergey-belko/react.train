@@ -1,36 +1,17 @@
-import React, { createContext, useReducer, useContext } from "react";
+import { inject as mobxInject, observer, Provider } from "mobx-react"
+import React from "react"
+import Main from './main'
+import User from './user'
 
-import { countInitialState, countActions } from "./count";
-import { userInitialState, userActions } from "./user";
+const store = {
+  User,
+  Main
+}
 
-const initialState = {
-  ...countInitialState,
-  ...userInitialState
-};
+export const StoreProvider = ({ children }) => (
+  <Provider {...store}>
+    {children}
+  </Provider>
+)
 
-const StoreContext = createContext(initialState);
-
-const Actions = {
-  ...userActions,
-  ...countActions
-};
-
-const reducer = (state, action) => {
-  const act = Actions[action.type];
-  const update = act(state);
-  return { ...state, ...update };
-};
-
-export const StoreProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
-  return (
-    <StoreContext.Provider value={{ state, dispatch }}>
-      {children}
-    </StoreContext.Provider>
-  );
-};
-
-export const useStore = store => {
-  const { state, dispatch } = useContext(StoreContext);
-  return { state, dispatch };
-};
+export const inject = (target) => (component) => mobxInject(target)(observer(component))

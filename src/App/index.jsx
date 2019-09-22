@@ -1,10 +1,9 @@
+import { Head, RouterHeader } from '@component'
+import { FlexboxPage, FormPage, InfoPage, MainPage, MobxPage } from '@page'
+import { StoreProvider } from "@store"
+import { addKeyToItem } from '@util'
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import { InfoPage, MainPage, FormPage, MobxPage, FlexboxPage } from '@page'
-import { Head, RouterHeader } from '@component'
-import { StoreProvider } from "@store"
-import { useStore } from '@store'
-
 import './global.css'
 
 const elements = [
@@ -25,13 +24,13 @@ const elements = [
     },
     {
         path: '/info/:id',
-        component: (props) => <InfoPage store={useStore('User')} {...props} />,
+        component: InfoPage,
         title: 'Info ID'
     },
     {
         path: '/mobx',
-        component: (props) => <MobxPage store={useStore('User')} {...props} />,
-        title: 'Mobx'
+        component: MobxPage,
+        title: 'Mobx',
     },
     {
         path: '/flexbox',
@@ -45,9 +44,11 @@ export const App = () => (
         <Head />
         <Router>
             <RouterHeader elements={elements} />
-            {elements.map((route, index) => (
-                <Route key={index} exact {...route} />
-            ))}
+            {elements
+                .map(addKeyToItem)
+                .map((route) => (
+                    <Route exact {...route} />
+                ))}
         </Router>
     </StoreProvider>
 )

@@ -62,7 +62,7 @@ class Form extends Component {
         const { method = 'post', url = '' } = this.props
 
         if (this.state.isLoading) {
-            return <p>Please, wait a second! Operarion is in procces</p>
+            return <p>Please, wait a second! Operation is in process</p>
         }
 
         return (
