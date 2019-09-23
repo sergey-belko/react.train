@@ -1,11 +1,14 @@
-import { decorate, observable } from 'mobx'
+import { action, observable } from 'mobx'
+
 class User {
+
+  @observable
   name = 'Fedor'
+
+  @action
   updateName = () => {
     this.name = this.name + 1
   }
 }
-
-decorate(User, { name: observable })
 
 export default new User()

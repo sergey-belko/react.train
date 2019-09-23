@@ -1,6 +1,6 @@
-import { decorate, observable } from 'mobx'
 import { Gallery } from '@component'
 import { addAnchor } from '@util'
+import { observable } from 'mobx'
 
 const content = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
 dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
@@ -9,6 +9,8 @@ fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in c
 deserunt mollit anim id est laborum.`
 
 class Main {
+
+    @observable
     sections = [
         { title: 'Main' },
         { title: 'Project' },
@@ -16,7 +18,5 @@ class Main {
         { title: 'Gallery', component: Gallery }
     ].map(addAnchor(content))
 }
-
-decorate(Main, { sections: observable })
 
 export default new Main()
