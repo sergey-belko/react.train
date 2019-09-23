@@ -1,0 +1,15 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__form {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.footer__return_button {
+  background: yellow;
+  border-radius: 4px;
+}
+

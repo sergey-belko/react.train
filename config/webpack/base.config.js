@@ -77,7 +77,7 @@ module.exports = {
                         loader: 'postcss-loader',
                         options: {
                             plugins: [
-                                new PostCssNormalize(),
+                                new PostCssNormalize({ forceImport: true }),
                                 new Autoprefixer(),
                                 new PostCSSImport(),
                                 new PostCssEnv(),

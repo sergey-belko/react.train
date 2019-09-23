@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.mainImgHolder {
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainImg {
+    border-radius: 4px;
+}
+
+.list {
+    display: flex;
+    overflow: auto;
+    justify-content: center;
+}
+
+.element {
+    border-radius: 4px;
+    margin: 1%;
+    max-width: 15%;
+}
