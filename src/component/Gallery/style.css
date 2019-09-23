@@ -23,5 +23,6 @@
 .element {
     border-radius: 4px;
     margin: 1%;
-    max-width: 15%;
+    max-width: 16%;
+    min-width: 150px;
 }

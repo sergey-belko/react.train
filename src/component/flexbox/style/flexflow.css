@@ -1,0 +1,19 @@
+.flexflow__row_reverse {
+  flex-flow: row-reverse;
+}
+
+.flexflow__column {
+  flex-flow: column;
+}
+
+.flexflow__column_reverse {
+  flex-flow: column-reverse;
+}
+
+.flexflow__wrap_reverse {
+  flex-flow: wrap-reverse;
+}
+
+.flexflow__wrap {
+  flex-flow: wrap;
+}

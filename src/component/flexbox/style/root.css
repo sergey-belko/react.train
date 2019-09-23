@@ -1,0 +1,24 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+section {
+  padding: 0 2%;
+  display: flex;
+  flex-flow: column;
+}
+
+.container {
+  border: red solid;
+  display: flex;
+  flex-flow: row;
+  height: 300px;
+  width: 300px;
+}
+
+.element {
+  border: solid black;
+  text-align: center;
+}

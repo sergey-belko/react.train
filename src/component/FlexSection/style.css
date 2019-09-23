@@ -1,0 +1,12 @@
+.container {
+    border: red solid;
+    display: flex;
+    flex-flow: row;
+    height: 300px;
+    width: 300px;
+  }
+  
+  .element {
+    border: solid black;
+    text-align: center;
+  }
